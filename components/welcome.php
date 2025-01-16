@@ -12,13 +12,16 @@
             height: 100%;
             position: relative;
         }
+
         .content {
             position: relative;
             z-index: 2; 
             color: white;
-            top: 50%;
+            top: 50%; 
             transform: translateY(-50%);
         }
+
+       
 
         .overlay {
             background-color: rgba(0, 0, 0, 0.5); 
@@ -34,11 +37,31 @@
             text-align: center;
             color: white;
             
+        } 
+        
+        h2{
+            position: fixed;
+            left: 100px;
+            bottom: 480px;
+            
         }
         
+        .login{
+            position: fixed;
+            left: 1500px;
+            bottom: 480px;
+        }
+
         .content p{
             text-align: center;
             margin-bottom: -5px;
+            font-size: 25;
+        }
+
+        .content #btn-1{
+            position: fixed;
+            left: 750px;
+            margin-top: 10px;
         }
 
         nav img{ 
@@ -51,17 +74,22 @@
 </head>
 <body>
     <div class="background">
-        <div class="overlay"></div>
+        <div class="overlay"></div>     
         <div class="content">
             <nav>
                 <img src="img/logo.png" alt="logo">
             </nav>
-            <h1>Welcome</h1>
-            <p>If you are not feeling well or need to make an appointment/followup with your doctor</p>
-            <p>then sign up if you don't already have an account with us or sign in if you do!</p>
-            <p>We're here for your every need.</p>
+            <h2>MediCare</h2>
+                    <div class="login">
+                        <button type="button" class="btn btn-info">Log In</button>
+                        <button type="button" class="btn btn-success">Sign Up</button>
+                    </div>
+                <h1>Welcome</h1>
+                <p>If you are not feeling well or need to make an appointment/followup with your doctor</p>
+                <p>then sign up if you don't already have an account with us or sign in if you do!</p>
+                <p>We're here for your every need.</p>
+                <button type="button" class="btn btn-primary" id="btn-1">Book an Appointment!</button>
         </div>
     </div>
-   
 </body>
 </html>
