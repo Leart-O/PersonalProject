@@ -1,4 +1,5 @@
-<?php include("header.php");?>
+<?php include("header2.php");
+       include("footer2.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +82,18 @@
             </nav>
             <h2>MediCare</h2>
                     <div class="login">
-                        <button type="button" class="btn btn-info">Log In</button>
-                        <button type="button" class="btn btn-success">Sign Up</button>
+                        <div class="btn-group">
+                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                         Action  
+                        </button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+        </div>
                     </div>
                 <h1>Welcome</h1>
                 <p>If you are not feeling well or need to make an appointment/followup with your doctor</p>
@@ -91,5 +102,6 @@
                 <button type="button" class="btn btn-primary" id="btn-1">Book an Appointment!</button>
         </div>
     </div>
+
 </body>
 </html>

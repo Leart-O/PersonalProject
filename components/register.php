@@ -8,22 +8,19 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $surname = $_POST['surname'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
 
     if (empty($name) || empty($username) || empty($surname) || empty($email)|| empty($password)) {
         echo "You need to fill all the fields";
     } else{
         $sql = "SELECT username FROM patient WHERE username=:username";
-        // $sql = "SELECT password FROM patient WHERE password=:password";
 
         $tempSQL = $conn->prepare($sql);
         $tempSQL-> bindParam(':username', $username);
-        // $tempSQL-> bindParam(':password', $password);
         $tempSQL->execute();
 
-
         if($tempSQL->rowCount() > 0){
-            echo"username and password exist";
+            echo"username exists";
             header("refresh:3; url=signup.php");
         }
         else{

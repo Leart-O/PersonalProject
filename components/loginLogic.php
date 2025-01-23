@@ -9,20 +9,18 @@ if(isset($_POST['submit'])){
     if(empty($username) || empty($password)){
         echo "fill all the fields";
     }else{
-        $sql = "SELECT * FROM patient WHERE username = :username, password = :password";
-        // $sql = "SELECT * FROM patient WHERE password = :password";
+        $sql = "SELECT * FROM patient WHERE username = :username AND password = :password";
         $login = $conn->prepare($sql);
         $login->bindParam(':username', $username);
         $login->bindParam(':password', $password);
-        //Problem with id not comunicating/is not right.
         $login->execute();
 
-        if($tempSQL->rowCount() > 0){
-            $sql = $insertSQL->fetch();
+        if($login->rowCount() > 0){
+            $user = $login->fetch();
+            echo "Login successful";
+        } else {
+            echo "Invalid username or password";
         }
     }
 }
-
-
-
 ?>
