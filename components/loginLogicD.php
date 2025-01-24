@@ -17,7 +17,9 @@ if(isset($_POST['submit'])){
 
         if($login->rowCount() > 0){
             $user = $login->fetch();
-            echo "Login successful";
+            // echo "Login successful";
+            header("Location: sidebarD.php");
+            exit();
         } else {
             echo "Invalid username or password";
         }

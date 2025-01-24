@@ -4,7 +4,7 @@ include_once('header.php');
 ?>
 
 <div class="signup">
-    <form action="registerD.php" class="form-signin" method="post">
+    <form action="signupLogicD.php" class="form-signin" method="post">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <label for="inputEmail" class="sr=only">Name</label>
@@ -26,7 +26,7 @@ include_once('header.php');
 
         <small>Already have an account? <a href="loginD.php">Log in</a></small>
 
-        <p class="mt-5 mb-3 text-muted">Digital School &copy; 2024</p>
+        <p class="mt-5 mb-3 text-muted">MediCare &copy; 2025</p>
 
     </form>
 </div>

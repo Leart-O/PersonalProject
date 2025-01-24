@@ -17,7 +17,7 @@ include_once("header.php");?>
 
         <small>You dont have an account? <a href="signupD.php">Sign Up</a></small>
 
-        <p class="mt-5 mb-3 text-muted">Digital School &copy; 2024</p>
+        <p class="mt-5 mb-3 text-muted">MediCare &copy; 2025</p>
     </form>
 
 </div>

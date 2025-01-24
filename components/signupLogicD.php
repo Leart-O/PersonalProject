@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
             header("refresh:3; url=signupD.php");
         }
         else{
-            $sql = "INSERT INTO doctor (name, username, surname, email, password) VALUES (:name, :surname, :username, :email, :password)";
+            $sql = "INSERT INTO doctor (name, surname, username, email, password) VALUES (:name, :surname, :username, :email, :password)";
             $insertSql = $conn->prepare($sql);
 
             $insertSql->bindParam(':name', $name);
@@ -34,7 +34,8 @@ if(isset($_POST['submit'])){
 
             $insertSql->execute();
 
-            echo"Data is saved";
+            header("Location: sidebarP.php");
+            exit();
         }
     }
 
