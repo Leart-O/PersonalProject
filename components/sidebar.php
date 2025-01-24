@@ -1,4 +1,5 @@
-<?php include("header.php");?>
+<?php include("header2.php");
+       include("footer2.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

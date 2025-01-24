@@ -3,7 +3,7 @@
 include_once("header.php");?>
 
 <div class="login">
-    <form action="loginLogic.php" class="form-signin" method="post">
+    <form action="loginLogicP.php" class="form-signin" method="post">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <label for="inputEmail" class="sr=only">Username</label>
@@ -15,7 +15,7 @@ include_once("header.php");?>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign In</button>
 
-        <small>You dont have an account? <a href="signup.php">Sign Up</a></small>
+        <small>You dont have an account? <a href="signupP.php">Sign Up</a></small>
 
         <p class="mt-5 mb-3 text-muted">Digital School &copy; 2024</p>
     </form>

@@ -24,7 +24,7 @@ include_once('header.php');
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign In</button>
 
-        <small>Already have an account? <a href="login.php">Log in</a></small>
+        <small>Already have an account? <a href="loginP.php">Log in</a></small>
 
         <p class="mt-5 mb-3 text-muted">Digital School &copy; 2024</p>
 

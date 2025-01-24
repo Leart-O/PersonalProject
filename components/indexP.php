@@ -24,7 +24,7 @@
 </head>
 <body>
 	
-	<form action="add.php" method="POST">
+	<form action="addP.php" method="POST">
 		
 		<input type="text" name="username" placeholder="Username"><br>
 		<input type="text" name="name" placeholder="Emri"><br>

@@ -8,12 +8,11 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $surname = $_POST['surname'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
-
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
     if (empty($name) || empty($username) || empty($surname) || empty($email)|| empty($password)) {
         echo "You need to fill all the fields";
     } else{
-        $sql = "SELECT username FROM patient WHERE username=:username";
+        $sql = "SELECT username FROM doctor WHERE username=:username";
 
         $tempSQL = $conn->prepare($sql);
         $tempSQL-> bindParam(':username', $username);
@@ -21,10 +20,10 @@ if(isset($_POST['submit'])){
 
         if($tempSQL->rowCount() > 0){
             echo"username exists";
-            header("refresh:3; url=signup.php");
+            header("refresh:3; url=signupD.php");
         }
         else{
-            $sql = "INSERT INTO patient (name, username, surname, email, password) VALUES (:name, :surname, :username, :email, :password)";
+            $sql = "INSERT INTO doctor (name, username, surname, email, password) VALUES (:name, :surname, :username, :email, :password)";
             $insertSql = $conn->prepare($sql);
 
             $insertSql->bindParam(':name', $name);

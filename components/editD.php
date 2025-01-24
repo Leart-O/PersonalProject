@@ -4,7 +4,7 @@ include_once("config.php");
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM patient WHERE id=:id";
+$sql = "SELECT * FROM doctor WHERE id=:id";
 
 $prep = $conn->prepare($sql);
 
@@ -41,7 +41,7 @@ $data = $prep->fetch();
 </head>
 <body>
 	
-	<form action="update.php" method="POST">
+	<form action="updateD.php" method="POST">
 	<input type="number" name="id"  value="<?php echo $data['id']?>" readonly><br>
     <input type="text" name="username" value="<?php echo $data['username']?>"><br>
     <input type="text" name="name" value="<?php echo $data['name']?>"><br>

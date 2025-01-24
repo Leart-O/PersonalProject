@@ -22,8 +22,6 @@
             transform: translateY(-50%);
         }
 
-       
-
         .overlay {
             background-color: rgba(0, 0, 0, 0.5); 
             position: absolute;
@@ -84,14 +82,20 @@
                     <div class="login">
                         <div class="btn-group">
                          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                         Action  
+                         Sign Up  
                         </button>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Separated link</a></li>
+            <li><a class="dropdown-item" href="signupD.php">As a Doctor</a></li>
+            <li><a class="dropdown-item" href="signupP.php">As a Patient</a></li>
+        </ul>
+        </div>
+        <div class="btn-group">
+                         <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                         Log In  
+                        </button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="loginD.php">As a Doctor</a></li>
+            <li><a class="dropdown-item" href="loginP.php">As a Patient</a></li>
         </ul>
         </div>
                     </div>
