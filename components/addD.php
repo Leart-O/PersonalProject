@@ -1,38 +1,39 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
 
-	include_once('config.php');
+	<style>
 
-	if(isset($_POST['submit']))
-	{
+		form>input {
+		    margin-bottom: 10px;
+		    font-size: 20px;
+		    padding: 5px;
+		}
 
-        $username = $_POST['username'];
-	    $name = $_POST['name'];
-		$surname = $_POST['surname'];
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+		button {
+		    background: none;
+		    border: none;
+		    border: 1px solid black;
+		    padding: 10px 40px;
+		    font-size: 20px;
+		    cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	
+	<form action="addLogicD.php" method="POST">
 		
+		<input type="text" name="username" placeholder="Username"><br>
+		<input type="text" name="name" placeholder="Emri"><br>
+		<input type="text" name="surname" placeholder="Mbiemri"><br>
+		<input type="email" name="email" placeholder="Email"><br><br>
+		<input type="password" name="password" placeholder="Password"><br><br>
+		<button type="submit" name="submit">Add</button>
 
+	</form>
 
-			$sql = "INSERT INTO doctor(username,name,surname,email,password) VALUES (:username, :name, :surname, :email, :password)";
-
-			$insertSql = $conn->prepare($sql);
-
-			$insertSql->bindParam(':username', $username);
-			$insertSql->bindParam(':name', $name);
-			$insertSql->bindParam(':surname', $surname);
-			
-			$insertSql->bindParam(':email', $email);
-			$insertSql->bindParam(':password', $password);
-
-			$insertSql->execute();
-
-			echo "The user has been added successfully";
-
-			echo "<br>";
-
-			echo "<a href='dashboard.php'>Dashboard</a>";
-
-	}
-
-
-?>
+</body>
+</html>

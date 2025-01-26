@@ -82,7 +82,7 @@
 
 	 </table>
 
-	 <a href="indexP.php">Add User</a>
+	 <a href="addP.php">Add User</a>
 
 	 <?php 
 
@@ -136,7 +136,7 @@
 
 	 </table>
 
-	 <a href="indexD.php">Add User</a>
+	 <a href="addD.php">Add User</a>
 	
 </body>
 </html>

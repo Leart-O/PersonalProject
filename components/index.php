@@ -96,6 +96,7 @@
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="loginD.php">As a Doctor</a></li>
             <li><a class="dropdown-item" href="loginP.php">As a Patient</a></li>
+            <li><a class="dropdown-item" href="loginA.php">As an Admin</a></li>
         </ul>
         </div>
                     </div>
