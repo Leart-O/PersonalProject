@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $surname = $_POST['surname'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
+    $password = $_POST['password'];
     if (empty($name) || empty($username) || empty($surname) || empty($email)|| empty($password)) {
         echo "You need to fill all the fields";
     } else{

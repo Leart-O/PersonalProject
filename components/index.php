@@ -50,6 +50,11 @@
             left: 1500px;
             bottom: 480px;
         }
+        .signup{
+            position: fixed;
+            left: 1400px;
+            bottom: 480px;
+        }
 
         .content p{
             text-align: center;
@@ -80,7 +85,7 @@
             </nav>
             <h2>MediCare</h2>
                     <div class="login">
-                        <div class="btn-group">
+                    <div class="btn-group">
                          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                          Sign Up  
                         </button>
@@ -89,6 +94,8 @@
             <li><a class="dropdown-item" href="signupP.php">As a Patient</a></li>
         </ul>
         </div>
+         </div>
+         <div class="signup">
         <div class="btn-group">
                          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                          Log In  
@@ -98,8 +105,9 @@
             <li><a class="dropdown-item" href="loginP.php">As a Patient</a></li>
             <li><a class="dropdown-item" href="loginA.php">As an Admin</a></li>
         </ul>
-        </div>
-                    </div>
+       
+                    </div></div>
+
                 <h1>Welcome</h1>
                 <p>If you are not feeling well or need to make an appointment/followup with your doctor</p>
                 <p>then sign up if you don't already have an account with us or sign in if you do!</p>
