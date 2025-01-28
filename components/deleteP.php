@@ -12,7 +12,7 @@ $getUsers->bindParam(':id', $id);
 
 $getUsers->execute();
 
-header('Location:dashboard.php');
+header('Location:dashboardP.php');
 
 	
 ?>

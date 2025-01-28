@@ -12,16 +12,35 @@
             width: 100%;
         }
 
-        .bg-img {
-            border: 1px solid #dac9f8;
-  border-radius: 25px;
-  background: url(img/admin.png);
-  background-position: top;
-  background-repeat: repeat;
-  padding: 20px;
-  width: 1550px;
-  height: 300px;
-}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			padding-right: 10px;
+			margin: 25px 0;
+			font-size: 18px;
+			text-align: left;
+		}
+
+		th, td {
+			padding: 12px;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+
+		a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
     </style>
 </head>
 <body>
@@ -35,7 +54,7 @@
                 <hr class="dropdown-divider custom-divider">
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="sidebarA.php" class="nav-link align-middle px-0 text-white">
+                        <a href="SidebarA.php" class="nav-link align-middle px-0 text-white">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                         </a>
                     </li>
@@ -73,18 +92,56 @@
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
-                </div>
+                </div> 
             </div>
             </div>
-            <div class="col py-3">
+			<div class="col py-3">
 
-                <div class="bg-img">
-                    <h1>Hello Administrator!</h1>
-                    <h4>This is your dedicated page in where you can control your website.</h4>
-                </div>
+			<h1>Patient List:</h1>
+			<h6>Here you can see all of the patients that are a part of your website and you can manoeuvre with them <br> like update their info or delete a selected user.</h6>
+			
+			<?php 
 
-            </div>
-        </div>
+		include_once('config.php');
+		include('header.php');
+		include('footer.php');
+		$getUsers = $conn->prepare("SELECT * FROM patient");
+
+		$getUsers->execute();
+
+		$users = $getUsers->fetchAll();
+
+	 ?>
+<table class="table">
+	
+	<thead class="table-dark">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($users as $user): ?>
+			<tr>
+				<td><?= htmlspecialchars($user['id']) ?></td>
+				<td><?= htmlspecialchars($user['username']) ?></td>
+				<td><?= htmlspecialchars($user['name']) ?></td>
+				<td><?= htmlspecialchars($user['surname']) ?></td>
+				<td><?= htmlspecialchars($user['email']) ?></td>
+				<td>
+					<a href="deleteP.php?id=<?= $user['id'] ?>">Delete</a> |
+					<a href="editP.php?id=<?= $user['id'] ?>">Update</a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+</div>  
+</div>
 
 </body>
 </html>

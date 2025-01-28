@@ -12,16 +12,35 @@
             width: 100%;
         }
 
-        .bg-img {
-            border: 1px solid #dac9f8;
-  border-radius: 25px;
-  background: url(img/admin.png);
-  background-position: top;
-  background-repeat: repeat;
-  padding: 20px;
-  width: 1550px;
-  height: 300px;
-}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			padding-right: 10px;
+			margin: 25px 0;
+			font-size: 18px;
+			text-align: left;
+		}
+
+		th, td {
+			padding: 12px;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+
+		a {
+			color: #3498db;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
     </style>
 </head>
 <body>
@@ -73,18 +92,56 @@
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
-                </div>
+                </div> 
             </div>
             </div>
-            <div class="col py-3">
+			<div class="col py-3">
 
-                <div class="bg-img">
-                    <h1>Hello Administrator!</h1>
-                    <h4>This is your dedicated page in where you can control your website.</h4>
-                </div>
+			<h1>Doctors List:</h1>
+			<h6>Here you can see al lof the doctors that are a part of your website and you can manoeuvre with them <br> like update their info or delete a selected user.</h6>
+			
+			<?php 
 
-            </div>
-        </div>
+		include_once('config.php');
+		include('header.php');
+		include('footer.php');
+		$getUsers = $conn->prepare("SELECT * FROM doctor");
+
+		$getUsers->execute();
+
+		$users = $getUsers->fetchAll();
+
+	 ?>
+<table class="table">
+	
+	<thead class="table-dark">
+		<tr>
+			<th>ID</th>
+			<th>Username</th>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Email</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($users as $user): ?>
+			<tr>
+				<td><?= htmlspecialchars($user['id']) ?></td>
+				<td><?= htmlspecialchars($user['username']) ?></td>
+				<td><?= htmlspecialchars($user['name']) ?></td>
+				<td><?= htmlspecialchars($user['surname']) ?></td>
+				<td><?= htmlspecialchars($user['email']) ?></td>
+				<td>
+					<a href="deleteD.php?id=<?= $user['id'] ?>">Delete</a> |
+					<a href="editD.php?id=<?= $user['id'] ?>">Update</a>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+</div>  
+</div>
 
 </body>
 </html>

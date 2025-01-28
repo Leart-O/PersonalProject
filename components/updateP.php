@@ -24,7 +24,7 @@ if(isset($_POST['update']))
 
 	$prep->execute();
 
-	header("Location:dashboard.php");
+	header("Location:dashboardP.php");
 }
 
 

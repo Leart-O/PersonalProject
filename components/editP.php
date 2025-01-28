@@ -53,7 +53,7 @@ $data = $prep->fetch();
 		<button type="submit" name="update">UPDATE</button>
        
 	</form>
-    <a href="dashboard.php">Dashboard</a>
+    <a href="dashboardP.php">Dashboard</a>
 	</body>
 </html>
 

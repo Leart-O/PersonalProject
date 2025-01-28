@@ -30,7 +30,7 @@
 
 			echo "<br>";
 
-			echo "<a href='dashboard.php'>Dashboard</a>";
+			echo "<a href='dashboardP.php'>Dashboard</a>";
 
 	}
 

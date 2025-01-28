@@ -11,6 +11,17 @@
             border-top: 0.25px solid gray;
             width: 100%;
         }
+        
+        .bg-img {
+            border: 1px solid teal;
+            border-radius: 25px;
+            background: url(img/doctor.png);
+            background-position: top;
+            background-repeat: repeat;
+            padding: 20px;
+            width: 1550px;
+            height: 300px;
+        }
     </style>
 </head>
 <body>
@@ -91,5 +102,14 @@
                 </div>
             </div>
         </div>
+        <div class="col py-3">
+
+                <div class="bg-img">
+                    <h1>Hello Doctor!</h1>
+                    <h4>This is your dedicated page in where you can control your website.</h4>
+                </div>
+
+            </div>
+    </div>
 </body>
 </html>
