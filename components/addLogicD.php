@@ -26,12 +26,7 @@
 
 			$insertSql->execute();
 
-			echo "The user has been added successfully";
-
-			echo "<br>";
-
-			echo "<a href='dashboardD.php'>Dashboard</a>";
-
+			header('Location:dashboardD.php');
 	}
 
 

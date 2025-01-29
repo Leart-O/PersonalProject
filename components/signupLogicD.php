@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
             $insertSql->execute();
 
-            header("Location: sidebarP.php");
+            header("Location: sidebarD.php");
             exit();
         }
     }

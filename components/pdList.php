@@ -36,7 +36,7 @@
             background-color: #71d6cc;
             margin-left: 15%;
             width: 1050px;
-            height: 345px;
+            height: 365px;
 }
 
     </style>
@@ -75,22 +75,39 @@
         </div>
         <div class="col py-3">
 
-                <div class="bg-img">
-                    <h1>Hello Patient!</h1>
-                    <h4>This is your dedicated page in where you can control your website.</h4>
-                </div>
+                <h1>Doctor List:</h1>
+            <h6>Here you can see all of the doctors and their contact info</h6>
+            <?php 
 
-                <br><br><br><br>
+            		include_once('config.php');
+            		include('header.php');
+            		include('footer.php');
+            		$getUsers = $conn->prepare("SELECT * FROM doctor");
 
-                <div class="text">
-                    <h1>What can you do as a Patient?</h1>
-                    <h6>As a patient, you have access to a straightforward interface to view available doctors and easily contact them.</h6>
-                    <p>As a Patient, your experience is designed to be simple and effective. Your key features include: <br>
-                        <ol><b>View Doctor List:</b> Browse through a list of available doctors across different specialties. <br>
-                        <b>Access Doctor Contact Information:</b> Find contact details for each doctor, including their phone numbers and email addresses for easy communication. <br>
-                        <b>View Doctor Details:</b> Get more information about each doctor, such as their qualifications, experience, and areas of expertise. <br></ol>
-                        Your role is to browse, choose the right doctor for your needs, and keep track of any communication or appointments you may have. Our platform ensures you can easily find the help you need with just a few clicks.</p>
-                </div>
+            		$getUsers->execute();
+
+            		$users = $getUsers->fetchAll();
+
+            	 ?>
+            <table class="table">
+            	<thead class="table-dark">
+            		<tr>
+            			<th>Name</th>
+            			<th>Surname</th>
+            			<th>Email</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		<?php foreach ($users as $user): ?>
+            			<tr>
+            				<td><?= htmlspecialchars($user['name']) ?></td>
+            				<td><?= htmlspecialchars($user['surname']) ?></td>
+            				<td><?= htmlspecialchars($user['email']) ?></td>
+            			</tr>
+            		<?php endforeach; ?>
+            	</tbody>
+            </table>
+
 
 
             </div>

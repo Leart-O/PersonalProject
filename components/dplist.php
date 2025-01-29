@@ -1,46 +1,22 @@
 <?php include("header2.php"); ?>
 <?php include("footer2.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard-Doctor</title>
+    <title>Patient List</title>
     <style>
-
-        body{
-            background-color: #ddfffa;
-        }
-
         .custom-divider {
             border-top: 0.25px solid gray;
             width: 100%;
         }
-        
-        .bg-img {
-            border: 1px solid teal;
-            border-radius: 25px;
-            background: url(img/doctor.png);
-            background-position: top;
-            background-repeat: repeat;
-            padding: 20px;
-            width: 1550px;
-            height: 300px;
-        }
-
-        .text {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #779da3;
-            border-radius: 25px;
-            background-color: #9dd0d4;
-            margin-left: 15%;
-            width: 1050px;
-            height: 365px;
-}
     </style>
 </head>
 <body>
+</html>
+
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
@@ -83,27 +59,38 @@
         </div>
         <div class="col py-3">
 
-                <div class="bg-img">
-                    <h1>Hello Doctor!</h1>
-                    <h4>This is your dedicated page in where you can control your website.</h4>
-                </div>
+            <h1>Patient List:</h1>
+            <h6>Here you can see all of the patients and their contact info</h6>
+            <?php 
 
-                <br><br><br><br>
+            		include_once('config.php');
+            		include('header.php');
+            		include('footer.php');
+            		$getUsers = $conn->prepare("SELECT * FROM patient");
 
-                <div class="text">
-                    <h1>What can you do as a Doctor?</h1>
-                    <h6>As a doctor, you have access to a range of tools to manage your patients, appointments, and clinical documentation.</h6>
-                    <p>As a Doctor, you play a central role in providing care and maintaining patient records. Your key responsibilities and features include: <br>
-                        <ol><b>Patient Management:</b> View and manage your patient list, track their medical history, and monitor progress over time. <br>
-                        <b>Appointment Management:</b> Access your appointment schedule, confirm, reschedule, or cancel appointments, and keep track of patient visits. <br>
-                        <b>Write and Update Patient Charts:</b> Document diagnosis, prognosis, treatment plans, and prescriptions for each patient visit. <br>
-                        <b>Clinical Notes:</b> Record important notes during patient visits for ongoing care and follow-up. <br>
-                        <b>Manage Prescriptions:</b> Issue prescriptions and provide medical recommendations for patients as needed. <br></ol>
-                        Your role ensures accurate medical documentation and effective patient care. With these tools, you can streamline your workflow and offer the best possible care for your patients.</p>
-                </div>
+            		$getUsers->execute();
 
+            		$users = $getUsers->fetchAll();
 
+            	 ?>
+            <table class="table">
+            	<thead class="table-dark">
+            		<tr>
+            			<th>Name</th>
+            			<th>Surname</th>
+            			<th>Email</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		<?php foreach ($users as $user): ?>
+            			<tr>
+            				<td><?= htmlspecialchars($user['name']) ?></td>
+            				<td><?= htmlspecialchars($user['surname']) ?></td>
+            				<td><?= htmlspecialchars($user['email']) ?></td>
+            			</tr>
+            		<?php endforeach; ?>
+            	</tbody>
+            </table>
             </div>
     </div>
 </body>
-</html>

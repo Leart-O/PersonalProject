@@ -98,7 +98,7 @@
 			<div class="col py-3">
 
 			<h1>Doctors List:</h1>
-			<h6>Here you can see al lof the doctors that are a part of your website and you can manoeuvre with them <br> like update their info or delete a selected user.</h6>
+			<h6>Here you can see all of the doctors that are a part of your website and you can manoeuvre with them <br> like update their info or delete a selected user.</h6>
 			
 			<?php 
 

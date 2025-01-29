@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DataBase SQL CODE FOR TABLES</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>DataBase SQL CODE FOR TABLES</h1>
-
-    <p></p>
+    
 </body>
 </html>
