@@ -5,9 +5,9 @@
 	if(isset($_POST['submit']))
 	{
 
-        $username = $_POST['username'];
 	    $name = $_POST['name'];
-		$surname = $_POST['surname'];
+		$surname = $_POST['surname']; 
+		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
@@ -17,10 +17,9 @@
 
 			$insertSql = $conn->prepare($sql);
 
-			$insertSql->bindParam(':username', $username);
 			$insertSql->bindParam(':name', $name);
 			$insertSql->bindParam(':surname', $surname);
-			
+			$insertSql->bindParam(':username', $username);
 			$insertSql->bindParam(':email', $email);
 			$insertSql->bindParam(':password', $password);
 

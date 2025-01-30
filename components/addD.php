@@ -41,8 +41,8 @@ include_once('footer.php');
 	<label for="inputEmail" class="sr=only">Surname</label>
 	<input type="text" id="surname" class="form-control" placeholder="Surname" name="surname">
 
-	<label for="inputEmail" class="sr=only">Username</label>
-	<input type="text" id="username" class="form-control" placeholder="Username" name="username">
+	<label for="inputEmail" class="sr=only">Specialty</label>
+	<input type="text" id="username" class="form-control" placeholder="Add Specialty!" name="username">
 
 	<label for="inputEmail" class="sr=only">Email</label>
 	<input type="email" id="email" class="form-control" placeholder="Email" name="email">

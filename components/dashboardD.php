@@ -117,9 +117,9 @@
 	<thead class="table-dark">
 		<tr>
 			<th>ID</th>
-			<th>Username</th>
 			<th>Name</th>
 			<th>Surname</th>
+			<th>Specialty</th>
 			<th>Email</th>
 			<th>Actions</th>
 		</tr>
@@ -128,9 +128,9 @@
 		<?php foreach ($users as $user): ?>
 			<tr>
 				<td><?= htmlspecialchars($user['id']) ?></td>
-				<td><?= htmlspecialchars($user['username']) ?></td>
 				<td><?= htmlspecialchars($user['name']) ?></td>
-				<td><?= htmlspecialchars($user['surname']) ?></td>
+				<td><?= htmlspecialchars($user['surname']) ?></td>				
+				<td><?= htmlspecialchars($user['username']) ?></td>
 				<td><?= htmlspecialchars($user['email']) ?></td>
 				<td>
 					<a href="deleteD.php?id=<?= $user['id'] ?>">Delete</a> |

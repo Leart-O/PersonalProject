@@ -94,6 +94,7 @@
             		<tr>
             			<th>Name</th>
             			<th>Surname</th>
+                        <th>Specialty</th>
             			<th>Email</th>
             		</tr>
             	</thead>
@@ -102,12 +103,15 @@
             			<tr>
             				<td><?= htmlspecialchars($user['name']) ?></td>
             				<td><?= htmlspecialchars($user['surname']) ?></td>
+                            <td><?= htmlspecialchars($user['username']) ?></td>
             				<td><?= htmlspecialchars($user['email']) ?></td>
             			</tr>
             		<?php endforeach; ?>
-            	</tbody>
-            </table>
+            	</tbody>   
+              
 
+            </table>
+           <p class="mt-5 mb-3 text-muted">If you need to make an appointment do so through the phone with our administration at (+383/44-353-535)!</p>
 
 
             </div>

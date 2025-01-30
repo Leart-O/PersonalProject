@@ -49,9 +49,9 @@ $data = $prep->fetch();
 	<form action="updateD.php" class="form-signin" method="POST">
 	<h1 class="h3 mb-3 font-weight-normal">Update Doctor Information</h1>
 	<input class="form-control" type="number" name="id"  value="<?php echo $data['id']?>" readonly>
-    <input class="form-control" type="text" name="username" value="<?php echo $data['username']?>">
     <input class="form-control" type="text" name="name" value="<?php echo $data['name']?>">
-    <input class="form-control" type="text" name="surname" value="<?php echo $data['surname']?>">
+    <input class="form-control" type="text" name="surname" value="<?php echo $data['surname']?>">    
+	<input class="form-control" type="text" name="username" value="<?php echo $data['username']?>">
     <input class="form-control" type="email" name="email" value="<?php echo $data['email']?>">
 	<input class="form-control" type="password" name="password" value="<?php echo $data['password']?>">
 

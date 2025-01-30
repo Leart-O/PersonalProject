@@ -61,10 +61,6 @@
                     </li>
                     </li>
                     <li>
-                        <a href="dNotes.php" class="nav-link px-0 align-middle text-white">
-                            <i class="fs-4 bi-journal-medical"></i> <span class="ms-1 d-none d-sm-inline">Treatment Notes</span> </a>
-                    </li>
-                    <li>
                         <a href="appointment.php" class="nav-link px-0 align-middle text-white">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Appointment Management</span> </a>
                     </li>
