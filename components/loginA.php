@@ -1,3 +1,5 @@
+<!-- TO SIGN IN AS AN ADMIN USE "admin" AS BOTH USERNAME AND PASSWORD -->
+
 <?php
 
 include_once("header.php");?>

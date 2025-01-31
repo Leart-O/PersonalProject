@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2025 at 05:38 PM
+-- Generation Time: Jan 31, 2025 at 06:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id` int(10) NOT NULL,
-  `username` varchar(55) NOT NULL,
+  `id` int(15) NOT NULL,
+  `username` varchar(45) NOT NULL,
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -47,10 +47,10 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `doctor` (
-  `id` int(10) NOT NULL,
-  `username` varchar(55) NOT NULL,
-  `name` varchar(55) NOT NULL,
-  `surname` varchar(55) NOT NULL,
+  `id` int(15) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `surname` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
   `email` varchar(35) NOT NULL,
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -59,10 +59,12 @@ CREATE TABLE `doctor` (
 -- Dumping data for table `doctor`
 --
 
-INSERT INTO `doctor` (`id`, `username`, `name`, `surname`, `email`, `password`) VALUES
-(6, 'Neurosurgery', 'Olis', 'Jashari', 'o@gmail.com', '1'),
-(7, 'Cardio', 'usamee', 'mjekiqi', 'leart@gmail.com', '1'),
-(8, 'peds', 'Olis', 'Jashari', 'leart@gmail.com', '022');
+INSERT INTO `doctor` (`id`, `name`, `surname`, `username`, `email`, `password`) VALUES
+(13, 'Blerta', 'Hajdini', 'Pediatrics', 'blertahajdini@gmail.com', '123'),
+(14, 'Dren', 'Llazani', 'Neuroscience', 'llazanidren@gmail.com', '123'),
+(15, 'Usame', 'Mjekiqi', 'Orthopedics', 'umjekiqi@gmail.com', '123'),
+(16, 'Olti', 'Sogojeva', 'Optamotology', 'olti@gmail.com', '123'),
+(17, 'Florjon', 'Osmani', 'Cardiology', 'flori@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -71,10 +73,10 @@ INSERT INTO `doctor` (`id`, `username`, `name`, `surname`, `email`, `password`) 
 --
 
 CREATE TABLE `patient` (
-  `id` int(10) NOT NULL,
-  `username` varchar(55) NOT NULL,
-  `name` varchar(55) NOT NULL,
-  `surname` varchar(55) NOT NULL,
+  `id` int(15) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `surname` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
   `email` varchar(35) NOT NULL,
   `password` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -83,10 +85,12 @@ CREATE TABLE `patient` (
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`id`, `username`, `name`, `surname`, `email`, `password`) VALUES
-(7, 'usamm', 'usame', 'mjekiqi', 'u@gmail.com', '111'),
-(8, 'OL', 'Olis ', 'Jahari', 'o@gmail.com', '111'),
-(9, 'OJahari', 'Olis', 'Jashari', 'olis@gmail.com', '123');
+INSERT INTO `patient` (`id`, `name`, `surname`, `username`, `email`, `password`) VALUES
+(17, 'Leart', 'Obertinca', 'Leart_O', 'leartobertinca@gmail.com', '123'),
+(18, 'Erin', 'Marmullakaj', 'ErinM', 'erinm01@gmail.com', '123'),
+(19, 'Idriz', 'Sdi', 'S.idriz', 'idriz@gmail.com', '123'),
+(20, 'Nina', 'Sedi', 'SediNina', 'nina@gmail.com', '123'),
+(21, 'Blend', 'Osmani', 'BlendOsmani', 'blendi@gmail.com', '123');
 
 --
 -- Indexes for dumped tables
@@ -118,19 +122,19 @@ ALTER TABLE `patient`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `doctor`
 --
 ALTER TABLE `doctor`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

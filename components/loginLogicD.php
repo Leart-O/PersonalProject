@@ -3,6 +3,7 @@
 include_once('config.php');
 
 if(isset($_POST['submit'])){
+    $username = $_POST['name'];
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -11,6 +12,7 @@ if(isset($_POST['submit'])){
     }else{
         $sql = "SELECT * FROM doctor WHERE username = :username AND password = :password";
         $login = $conn->prepare($sql);
+        $login->bindParam(':username', $username);
         $login->bindParam(':username', $username);
         $login->bindParam(':password', $password);
         $login->execute();
